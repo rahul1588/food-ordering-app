@@ -3,14 +3,12 @@
     overflow: hidden;
 }
 
-.login-button{
-     float: right;
-     margin-top: -31px !important;
-     margin-right: -10px !important;
+.login-spacing{
+    margin-left: 5px;
 }
 
 .logo{
-    vertical-align: center;
+     vertical-align: center; 
 }
 
 .app-logo{
@@ -19,19 +17,15 @@
 }
 
 .search-box{
-     position: "relative";
-     display: inline-flex;
-     vertical-align: center;
-     width: 300px;
+    position: "relative";
+    display: inline-flex;
+    vertical-align: center;
+    width: 300px;
 }
 
 .search{
     padding-bottom: 5px;
     color: white;
-}
-
-.login-spacing{
-    margin-left: 5px;
 }
 
 .tabs{
@@ -51,7 +45,7 @@
     color: red;
 }
 
-error-msg{
+.error-msg{
     color: red;
     padding-left: 40px;
     padding-right: 25px;
