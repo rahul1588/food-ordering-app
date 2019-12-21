@@ -1,0 +1,59 @@
+#select-address {
+    border-style: solid;
+    border-color: #E0265F;
+    border-radius: 8px;
+    border-width: 1.5px;
+    box-shadow: 2px 2px #E0265F;
+}
+.width-4 {
+    width: 4%;
+}
+.width-50 {
+    width: 50%;
+}
+
+#summary-card {
+    margin-top: 25px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 25px;
+}
+
+.mr-2{
+    margin-right: 2%;
+}
+.width-25 {
+    width: 25%;
+}
+
+#unselect-address {
+    border-style: none;
+    box-shadow: none;
+}
+.display-none {
+    display: none;
+}
+
+.display-block {
+    display: block;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.flex{
+    display: flex;
+}
+
+.card{
+    margin: 0px;
+}
+
+.stepperWidth{
+    max-width: 70%;
+}

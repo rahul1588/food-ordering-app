@@ -99,7 +99,6 @@ class Home extends Component {
         window.removeEventListener('resize', this.updateCardsGridListCols);
     }
 
-    //This function is used to set the number of cards according to the screen width
     updateCardsGridListCols = () => {
         if (window.innerWidth >= 1530) {
             this.setState({ cards: 5 });
