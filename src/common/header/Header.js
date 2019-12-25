@@ -292,6 +292,8 @@ class Header extends Component {
         });
         xhrSignup.open("POST", this.baseUrl+"/customer/signup");
         xhrSignup.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+        xhrSignup.setRequestHeader("Cache-Control", "no-cache");
+        xhrSignup.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhrSignup.send(JSON.stringify(signupData));
     }
 
@@ -400,13 +402,9 @@ class Header extends Component {
        };
 
        logoutHandler = () => {
-          this.closeMenuItemsHandler();
-          this.setState({
-            showUserProfileDropDown: false,
-            username: ""
-          });
-        this.callLogoutApi();
-      };
+           sessionStorage.clear();
+           window.location.href = '/';
+       };
 
       inputChangeHandler = e => {
           sessionStorage.removeItem("query");
@@ -486,11 +484,10 @@ class Header extends Component {
                                     open={Boolean(anchorEl)}
                                     onClose={this.closeMenuItemsHandler}
                                 >
-                                    <Link to={"/profile"}>
                                     <MenuItem onClick={this.closeMenuItemsHandler}>
-                                        My Profile
+                                        <Link to="/profile" style={{ textDecoration: 'none', color: "black" }}>
+                                        My Profile</Link>
                                     </MenuItem>
-                                    </Link>
                                     <MenuItem onClick={this.logoutHandler}>Logout</MenuItem>
                                 </Menu>
                                 ) : null}
