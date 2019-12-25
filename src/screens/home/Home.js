@@ -179,7 +179,7 @@ class Home extends Component {
                                             {restaurant.restaurant_name}
                                         </Typography>
                                         {/* restaurant categories */}
-                                        <Typography variant='subtitle1'>
+                                        <Typography variant="body2" color="textSecondary" component="p" style={{marginBottom:8}}>
                                             {restaurant.categories}
                                         </Typography>
                                         <div className={classes.ratingAvgRateDiv}>
