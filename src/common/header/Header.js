@@ -302,7 +302,6 @@ class Header extends Component {
         let that1 = this;
 
         let loginEncoded = window.btoa(this.state.logincontactno+":"+this.state.loginpassword);
-        console.log(loginEncoded);
         xhrLogin.addEventListener("readystatechange", function(){
             if(this.readyState===4){
                 var data = JSON.parse(this.responseText);
@@ -312,7 +311,6 @@ class Header extends Component {
                         successMessage: "Logged in successfully!",
                         username: data.first_name
                     });
-                    console.log(this.getResponseHeader("access-token"));
                     sessionStorage.setItem("access-token", this.getResponseHeader("access-token"));
                     sessionStorage.setItem("username", data.first_name);
                     that1.closeModalHandler();
