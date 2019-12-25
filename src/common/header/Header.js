@@ -292,6 +292,8 @@ class Header extends Component {
         });
         xhrSignup.open("POST", this.baseUrl+"/customer/signup");
         xhrSignup.setRequestHeader("Content-Type","application/json;charset=UTF-8");
+        xhrSignup.setRequestHeader("Cache-Control", "no-cache");
+        xhrSignup.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhrSignup.send(JSON.stringify(signupData));
     }
 
@@ -300,6 +302,7 @@ class Header extends Component {
         let that1 = this;
 
         let loginEncoded = window.btoa(this.state.logincontactno+":"+this.state.loginpassword);
+        console.log(loginEncoded);
         xhrLogin.addEventListener("readystatechange", function(){
             if(this.readyState===4){
                 var data = JSON.parse(this.responseText);
@@ -309,6 +312,7 @@ class Header extends Component {
                         successMessage: "Logged in successfully!",
                         username: data.first_name
                     });
+                    console.log(this.getResponseHeader("access-token"));
                     sessionStorage.setItem("access-token", this.getResponseHeader("access-token"));
                     sessionStorage.setItem("username", data.first_name);
                     that1.closeModalHandler();
@@ -400,13 +404,9 @@ class Header extends Component {
        };
 
        logoutHandler = () => {
-          this.closeMenuItemsHandler();
-          this.setState({
-            showUserProfileDropDown: false,
-            username: ""
-          });
-        this.callLogoutApi();
-      };
+           sessionStorage.clear();
+           window.location.href = '/';
+       };
 
       inputChangeHandler = e => {
           sessionStorage.removeItem("query");
@@ -486,11 +486,10 @@ class Header extends Component {
                                     open={Boolean(anchorEl)}
                                     onClose={this.closeMenuItemsHandler}
                                 >
-                                    <Link to={"/profile"}>
                                     <MenuItem onClick={this.closeMenuItemsHandler}>
-                                        My Profile
+                                        <Link to="/profile" style={{ textDecoration: 'none', color: "black" }}>
+                                        My Profile</Link>
                                     </MenuItem>
-                                    </Link>
                                     <MenuItem onClick={this.logoutHandler}>Logout</MenuItem>
                                 </Menu>
                                 ) : null}
