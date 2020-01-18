@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Header from '../../common/header/Header';
 import { Typography, CardContent, Button, withStyles, CardHeader } from '@material-ui/core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faRupeeSign, faCircle, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '../../assets/fortawesome/react-fontawesome';
+import { faStar, faRupeeSign, faCircle, faMinus, faPlus } from '../../assets/fortawesome/free-solid-svg-icons';
 import Divider from '@material-ui/core/Divider';
 import Box from '@material-ui/core/Box';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -12,8 +12,6 @@ import IconButton from '@material-ui/core/IconButton';
 import AddIcon from '@material-ui/icons/Add';
 import Snackbar from '@material-ui/core/Snackbar';
 import Avatar from '@material-ui/core/Avatar';
-import 'font-awesome/css/font-awesome.min.css';
-
 import './Details.css';
 
 const styles = (theme => ({
